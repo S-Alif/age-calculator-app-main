@@ -1,0 +1,243 @@
+/* google-fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+/* root variables */
+:root{
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    --font: "poppins", sans-serif;
+    --input-font-size: 32px;
+}
+
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--off-white);
+    overflow-x: hidden;
+    font-family: var(--font);
+    position: relative;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*============== main contaienr ===============*/
+.main-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*============== content ===============*/
+.main-container .content{
+    width: 600px;
+    max-width: calc(100% - 20px);
+    border-radius: 25px 25px 150px 25px;
+    padding: 35px;
+    background-color: var(--white);
+}
+
+/*============== input forms ===============*/
+.content .input-forms{
+    width: 100%;
+    padding-bottom: 35px;
+    border-bottom: 2px solid var(--light-grey);
+    position: relative;
+}
+
+/* get the forms in line with flexbox */
+.input-forms ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.input-forms ul li{
+    flex: 0 0 auto;
+    width: 26%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.input-forms ul li > *{
+    display: block;
+}
+.input-forms ul label{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--smokey-grey);
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+}
+
+/* design the forms */
+.input-forms ul .form-control{
+    width: 100%;
+    height: 60px;
+    padding: 12px 15px;
+    border: 1px solid var(--light-grey);
+    border-radius: 7px;
+    font-family: var(--font);
+    font-size: var(--input-font-size);
+    font-weight: 700;
+    caret-color: var(--purple);
+}
+.input-forms ul .form-control:focus{
+    outline: 1px solid var(--purple);
+}
+.input-forms ul .form-control.error{
+    outline: 1px solid var(--light-red);
+    caret-color: var(--light-red);
+}
+
+/* error message */
+.err-msg{
+    font-size: 11px;
+    font-weight: 400;
+    font-style: italic;
+    padding-top: 5px;
+    color: var(--light-red);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+.err-msg.showed{
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+/* btn */
+.btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 32px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+    transition: 0.5s ease;
+}
+.btn:hover{
+    background-color: var(--off-black);
+    transition: 0.5s ease;
+}
+.btn img{
+    width: 50%;
+    height: auto;
+}
+
+
+/*============== output ===============*/
+.outputs{
+    padding-top: 50px;
+}
+.outputs h1{
+    font-size: 60px;
+    font-weight: 800;
+    font-style: italic;
+    line-height: 1.3;
+}
+.outputs span{
+    color: var(--purple);
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* valid error msg */
+.valid-error{
+    width: 600px;
+    max-width: calc(100% - 15px);
+    padding: 10px 22px;
+    background-color: var(--light-red);
+    color: var(--white);
+    font-weight: 800;
+    border-radius: 10px;
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+.valid-error.showed {
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.attribution {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 15px;
+    text-align: center;
+    bottom: 0;
+    font-weight: 700;
+    color: var(--off-black);
+}
+
+.attribution a {
+    color: var(--light-red);
+}
+
+
+
+/*============== responsive design ===============*/
+@media screen and (max-width: 650px) {
+    .input-forms ul li{
+        width: 33.333333%;
+    }
+    .btn{
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .valid-error{
+        top: 4%;
+    }
+}
+@media screen and (max-width: 520px) {
+    .input-forms ul li {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    .input-forms ul .form-control{
+        height: 50px;
+        font-size: 25px;
+        padding: 5px 10px;
+    }
+    .err-msg{
+        font-size: 10px;
+    }
+
+    .outputs h1{
+        font-size: 40px;
+    }
+
+    .valid-error{
+        top: 10%;
+    }
+}

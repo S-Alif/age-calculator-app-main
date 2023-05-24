@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body>
+
+  <section class="main-container">
+
+    <div class="content">
+
+      <div class="input-forms">
+        <ul>
+          <li>
+            <label for="day">day</label>
+            <input type="text" class="form-control" id="day" placeholder="DD">
+            <span class="err-msg">Must be valid date</span>
+          </li>
+          <li>
+            <label for="month">month</label>
+            <input type="text" class="form-control" id="month" placeholder="MM">
+            <span class="err-msg">Must be valid month</span>
+          </li>
+          <li>
+            <label for="year">year</label>
+            <input type="text" class="form-control" id="year" placeholder="YYYY">
+            <span class="err-msg">Must be valid year</span>
+          </li>
+        </ul>
+
+        <button type="button" id="submit-btn" class="btn" onclick="check()">
+          <img src="assets/images/icon-arrow.svg" alt="" class="icon">
+        </button>
+      </div>
+
+      <div class="outputs">
+        <h1><span class="show-year">--</span> years</h1>
+        <h1><span class="show-month">--</span> months</h1>
+        <h1><span class="show-day">--</span> days</h1>
+      </div>
+
+    </div>
+  </section>
+
+  <p class="valid-error">Provide valid date</p>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://twitter.com/sagor_alif8920" target="_blank">Alif</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
